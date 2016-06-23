@@ -10,15 +10,10 @@ var createBrowserHistory = require('history/lib/createBrowserHistory');
 
 var h = require('./helpers');
 
-// Firebase
 var Rebase = require('re-base');
 var base = Rebase.createClass('https://catch-of-the-day-fef40.firebaseio.com/');
 
 var Catalyst = require('react-catalyst');
-
-/*
-  App
-*/
 
 var App = React.createClass({
   mixins : [Catalyst.LinkedStateMixin],
@@ -96,10 +91,6 @@ var App = React.createClass({
   }
 });
 
-/*
-  Fish
-  <Fish />
-*/
 var Fish = React.createClass({
   onButtonClick : function() {
     console.log("Going to add the fish: ", this.props.index);
@@ -124,12 +115,6 @@ var Fish = React.createClass({
   }
 });
 
-
-/*
-  Add Fish Form
-  <AddFishForm />
-*/
-
 var AddFishForm = React.createClass({
   createFish : function(event) {
     // 1. Stop the form from submitting
@@ -137,10 +122,6 @@ var AddFishForm = React.createClass({
     // 2. Take the data from the form and create an object
     var fish = {
       name : this.refs.name.value,
-      price : this.refs.price.value,
-      status : this.refs.status.value,
-      desc : this.refs.desc.value,
-      image : this.refs.image.value
     }
 
     // 3. Add the fish to the App State
@@ -164,10 +145,6 @@ var AddFishForm = React.createClass({
   }
 });
 
-/*
-  Header
-  <Header/>
-*/
 var Header = React.createClass({
   render : function() {
     return (
@@ -188,10 +165,6 @@ var Header = React.createClass({
   }
 })
 
-/*
-  Order
-  <Order/>
-*/
 var Order = React.createClass({
   renderOrder : function(key) {
     var fish = this.props.fishes[key];
@@ -258,10 +231,6 @@ var Order = React.createClass({
   }
 })
 
-/*
-  Inventory
-  <Inventory/>
-*/
 var Inventory = React.createClass({
   renderInventory : function(key) {
     var linkState = this.props.linkState;
@@ -303,12 +272,6 @@ var Inventory = React.createClass({
   }
 })
 
-
-/*
-  StorePicker
-  This will let us make <StorePicker/>
-*/
-
 var StorePicker = React.createClass({
   mixins : [History],
   goToStore : function(event) {
@@ -329,20 +292,11 @@ var StorePicker = React.createClass({
 
 });
 
-/*
-  Not Found
-*/
-
 var NotFound = React.createClass({
   render : function() {
     return <h1>Not Found!</h1>
   }
 });
-
-
-/*
-  Routes
-*/
 
 var routes = (
   <Router history={createBrowserHistory()}>
