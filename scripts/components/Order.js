@@ -4,7 +4,7 @@ import h from '../helpers';
 import autobind from 'autobind-decorator';
 
 @autobind
-class Order extends React.Component {
+export default class Order extends React.Component {
   renderOrder(key) {
     let fish = this.props.fishes[key];
     let count = this.props.order[key];
@@ -68,5 +68,3 @@ Order.propTypes = {
   order : React.PropTypes.object.isRequired,
   removeFromOrder : React.PropTypes.func.isRequired
 }
-
-export default Order;

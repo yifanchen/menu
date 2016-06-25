@@ -15,4 +15,4 @@ let routes = (
   </Router>
 )
 
-ReactDOM.render(routes, document.querySelector('#main'));
+ReactDOM.render(routes, document.querySelector('.main'));

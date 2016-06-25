@@ -11,7 +11,7 @@ import Rebase from 're-base';
 let base = Rebase.createClass('https://catch-of-the-day-fef40.firebaseio.com/');
 
 @autobind
-class App extends React.Component {
+export default class App extends React.Component {
 
   constructor() {
     super();
@@ -99,5 +99,3 @@ class App extends React.Component {
 };
 
 reactMixin.onClass(App, Catalyst.LinkedStateMixin);
-
-export default App;

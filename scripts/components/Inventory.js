@@ -3,7 +3,7 @@ import AddFishForm from './AddFishForm';
 import autobind from 'autobind-decorator';
 
 @autobind
-class Inventory extends React.Component {
+export default class Inventory extends React.Component {
   renderInventory(key) {
     let linkState = this.props.linkState;
     return (
@@ -40,5 +40,3 @@ Inventory.propTypes = {
   linkState : React.PropTypes.func.isRequired,
   removeFish : React.PropTypes.func.isRequired
 }
-
-export default Inventory;

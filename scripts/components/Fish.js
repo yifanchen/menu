@@ -3,7 +3,7 @@ import h from '../helpers';
 import autobind from 'autobind-decorator';
 
 @autobind
-class Fish extends React.Component {
+export default class Fish extends React.Component {
 
   onButtonClick() {
     //console.log("Going to add the fish: ", this.props.index);
@@ -28,6 +28,3 @@ class Fish extends React.Component {
     )
   }
 };
-
-
-export default Fish;

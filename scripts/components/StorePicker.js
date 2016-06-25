@@ -5,11 +5,12 @@ import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
 
 @autobind
-class StorePicker extends React.Component {
+export default class StorePicker extends React.Component {
 
   goToStore(e) {
     e.preventDefault();
     let storeId = this.refs.storeId.value;
+    //this.history.pushState(null, `/store/ ${ sotreId }`);
     this.history.pushState(null, '/store/' + storeId);
   }
 
@@ -25,5 +26,3 @@ class StorePicker extends React.Component {
 }
 
 reactMixin.onClass(StorePicker, History);
-
-export default StorePicker;
