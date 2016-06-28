@@ -5,7 +5,7 @@ import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
 
 @autobind
-export default class StorePicker extends React.Component {
+class StorePicker extends React.Component {
 
   goToStore(e) {
     e.preventDefault();
