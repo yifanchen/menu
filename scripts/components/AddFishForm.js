@@ -1,13 +1,18 @@
+/*
+  Add Fish Form
+  <AddFishForm />
+*/
+
 import React from 'react';
 import autobind from 'autobind-decorator';
 
 @autobind
-export default class AddFishForm extends React.Component {
-  createFish(e) {
+class AddFishForm extends React.Component {
+  createFish(event) {
     // 1. Stop the form from submitting
-    e.preventDefault();
+    event.preventDefault();
     // 2. Take the data from the form and create an object
-    let fish = {
+    var fish = {
       name : this.refs.name.value,
       price : this.refs.price.value,
       status : this.refs.status.value,
@@ -36,3 +41,5 @@ export default class AddFishForm extends React.Component {
     )
   }
 };
+
+export default AddFishForm;

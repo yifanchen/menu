@@ -1,20 +1,25 @@
+/*
+  Fish
+  <Fish />
+*/
+
 import React from 'react';
 import h from '../helpers';
 import autobind from 'autobind-decorator';
 
 @autobind
-export default class Fish extends React.Component {
-
+class Fish extends React.Component {
+  
   onButtonClick() {
-    //console.log("Going to add the fish: ", this.props.index);
-    let key = this.props.index;
+    console.log("Going to add the fish: ", this.props.index);
+    var key = this.props.index;
     this.props.addToOrder(key);
   }
-
+  
   render() {
-    let details = this.props.details;
-    let isAvailable = (details.status === 'available' ? true : false);
-    let buttonText = (isAvailable ? 'Add To Order' : 'Sold Out!');
+    var details = this.props.details;
+    var isAvailable = (details.status === 'available' ? true : false);
+    var buttonText = (isAvailable ? 'Add To Order' : 'Sold Out!');
     return (
       <li className="menu-fish">
         <img src={details.image} alt={details.name} />
@@ -28,3 +33,6 @@ export default class Fish extends React.Component {
     )
   }
 };
+
+
+export default Fish;

@@ -1,6 +1,11 @@
+/*
+  Header
+  <Header/>
+*/
+
 import React from 'react';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   render() {
     return (
       <header className="top">
@@ -10,7 +15,7 @@ export default class Header extends React.Component {
             <span className="the">the</span>
           </span>
           Day</h1>
-        <h3 className="tagline"><span>{this.props.tagline}</span></h3>
+        <h3 className="tagline"><span>{this.props.tagline}</span></h3> 
       </header>
     )
   }
@@ -19,3 +24,5 @@ export default class Header extends React.Component {
 Header.propTypes = {
   tagline : React.PropTypes.string.isRequired
 }
+
+export default Header;
