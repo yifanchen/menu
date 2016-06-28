@@ -1,8 +1,3 @@
-/* 
-  StorePicker
-  This will let us make <StorePicker/>
-*/
-
 import React from 'react';
 import { History } from 'react-router';
 import h from '../helpers';
@@ -10,12 +5,12 @@ import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
 
 @autobind
-class StorePicker extends React.Component {
+export default class StorePicker extends React.Component {
 
-  goToStore(event) {
-    event.preventDefault();
-    // get the data from the input
-    var storeId = this.refs.storeId.value;
+  goToStore(e) {
+    e.preventDefault();
+    let storeId = this.refs.storeId.value;
+    //this.history.pushState(null, `/store/ ${ sotreId }`);
     this.history.pushState(null, '/store/' + storeId);
   }
 
@@ -31,5 +26,3 @@ class StorePicker extends React.Component {
 }
 
 reactMixin.onClass(StorePicker, History);
-
-export default StorePicker;
